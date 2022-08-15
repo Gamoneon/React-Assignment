@@ -12,8 +12,11 @@
     text-align: center;
     font-size: 18px;
     padding-top: 10px;
-    border-right: 1px solid #e8e8e8;
     margin: 10px 0;
+    border-right: 1px solid #e8e8e8;
+}
+
+.card-options svg {
     cursor: pointer;
 }
 
@@ -24,4 +27,8 @@
 .btn-edit-user-data :hover,
 .btn-delete-user :hover {
     color: #3890ff;
+}
+
+.card-options > button:nth-child(3){
+    border: none;
 }

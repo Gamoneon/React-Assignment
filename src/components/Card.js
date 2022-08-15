@@ -1,20 +1,23 @@
 import React from "react";
 import "./css/Card.css";
 import UserOptions from "./user-options/UserOptions";
-// import { AiFillHeart, AiOutlineEdit } from "react-icons/ai";
+import Form from "./form-options/Form";
+import { useState } from "react";
 
 const Card = (props) => {
+  const [openModal, setOpenModal] = useState(false);
+
+  const toggleModal = () => {
+    setOpenModal(!openModal);
+  };
+
   return (
     <div className="card">
-      <div className="card-image-container">
-        <div className="card-image">
-          <img
-            className="card-image"
-            src={`https://avatars.dicebear.com/v2/avataaars/${props.username}.svg?options[mood][]=happy`}
-            alt="Sorry!"
-          ></img>
-        </div>
-      </div>
+      <img
+        className="card-image"
+        src={`https://avatars.dicebear.com/v2/avataaars/${props.username}.svg?options[mood][]=happy`}
+        alt="Sorry!"
+      ></img>
 
       <div className="card-body">
         <h3>{props.name}</h3>
@@ -65,8 +68,16 @@ const Card = (props) => {
           <span>{props.website}</span>
         </div>
       </div>
-
-      <UserOptions />
+      <UserOptions isFavourite={props.isFavourite} setModal={setOpenModal} />
+      {openModal && (
+        <Form
+          setModal={toggleModal}
+          name={props.name}
+          phone={props.contact}
+          email={props.mailId}
+          website={props.website}
+        />
+      )}
     </div>
   );
 };
