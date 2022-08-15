@@ -1,0 +1,27 @@
+.card-options {
+    /* justify-items: center; */
+    border-top: 1px solid #e8e8e8;
+    background: #fafafa;
+}
+
+.card-options button {
+    width: 33.3333%;
+    border: none;
+    background: none;
+    color: rgba(0, 0, 0, .45);
+    text-align: center;
+    font-size: 18px;
+    padding-top: 10px;
+    border-right: 1px solid #e8e8e8;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.btn-add-to-favourite {
+    font-size: 20px;
+}
+
+.btn-edit-user-data :hover,
+.btn-delete-user :hover {
+    color: #3890ff;
+}
