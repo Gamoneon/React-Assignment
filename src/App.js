@@ -12,10 +12,20 @@ function App() {
     }, 1000);
   }, []);
 
+ 
   const isPageLoaded = pageLoaded;
 
   return (
     <React.Fragment>
+      {/* {openModal && (
+        <Form
+          setModal={toggleModal}
+          // name={user.name}
+          // phone={user.phone}
+          // email={user.email}
+          // website={user.website}
+        />
+      )} */}
       {!isPageLoaded && <Loading />}
       <div className="cards">
         {isPageLoaded &&
@@ -28,6 +38,7 @@ function App() {
                 contact={user.phone}
                 website={user.website}
                 username={user.username}
+                isFavourite={user.favourite}
               />
             );
           })}
